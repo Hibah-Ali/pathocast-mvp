@@ -47,9 +47,7 @@ with col2:
 
 
 
-# SMS ALERT DEMO 
-
-st.markdown("---")
+# SMS alert demo 
 st.header("Simulated SMS Alert Preview")
 
 # User inputs (simulated data)
