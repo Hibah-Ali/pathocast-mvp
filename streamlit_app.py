@@ -32,16 +32,17 @@ for _, row in df.iterrows():
 
 
 
+
+
 col1, col2 = st.columns([2, 1])
 
 with col1:
     st.subheader("Geographic Risk Map (Simulated Data)")
     st_folium(m, width=600, height=300)
 
+    
 with col2:
     # Summary table
-  
-with col2:
     st.subheader("Risk Level Summary")
     st.write(df['risk_level'].value_counts().rename({0: "Low", 1: "Medium", 2: "High"}))
     
