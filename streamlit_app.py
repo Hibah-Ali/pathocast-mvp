@@ -5,7 +5,7 @@ import pandas as pd
 df = pd.read_csv("risk_data.csv")
 
 st.set_page_config(layout="wide")
-st.title("🦟 PathoCast: Dengue Risk Dashboard for Lahore")
+st.title("PathoCast: Dengue Risk Dashboard for Lahore")
 st.markdown("""
 This interactive MVP visualizes simulated dengue outbreak risk across Lahore based on geospatial clustering.
 No personal or proprietary modeling code is exposed in this version. All data is synthetically generated.
@@ -31,7 +31,7 @@ for _, row in df.iterrows():
         fill_opacity=0.7
     ).add_to(m)
 
-st_folium(m, width=700, height=450)
+st_folium(m, width=700, height=250)
 
 
 # Summary table
@@ -55,7 +55,7 @@ if st.button("Generate SMS Alert"):
     st.success("SMS Alert Sent:")
     st.code(alert)
 
-st.markdown("📲 **Realistic SMS Preview**")
+st.markdown("**Realistic SMS Preview**")
 
 with st.chat_message("assistant"):
     st.markdown(f"""
