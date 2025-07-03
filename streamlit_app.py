@@ -15,7 +15,6 @@ No personal or proprietary modeling code is exposed in this version. All data is
 import folium
 from streamlit_folium import st_folium
 
-st.subheader("Geographic Risk Map (Simulated Data)")
 
 m = folium.Map(location=[31.5, 74.3], zoom_start=11)
 
@@ -31,12 +30,20 @@ for _, row in df.iterrows():
         fill_opacity=0.7
     ).add_to(m)
 
-st_folium(m, width=700, height=250)
 
 
-# Summary table
-st.subheader("Summary by Risk Level")
-st.write(df['risk_level'].value_counts().rename({0: "Low", 1: "Medium", 2: "High"}))
+col1, col2 = st.columns([2, 1])
+
+with col1:
+    st.subheader("Geographic Risk Map (Simulated Data)")
+    st_folium(m, width=600, height=300)
+
+with col2:
+    # Summary table
+    st.subheader("📊 Risk Level Summary")
+    st.write(df['risk_level'].value_counts().rename({0: "Low", 1: "Medium", 2: "High"}))
+
+
 
 
 
