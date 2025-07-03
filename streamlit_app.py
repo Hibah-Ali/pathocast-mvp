@@ -41,7 +41,7 @@ with col1:
 with col2:
     # Summary table
   
-    with col2:
+with col2:
     st.subheader("Risk Level Summary")
     st.write(df['risk_level'].value_counts().rename({0: "Low", 1: "Medium", 2: "High"}))
     
