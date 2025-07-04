@@ -40,13 +40,7 @@ with col1:
     st.subheader("Geographic Risk Map (Simulated Data)")
     st_folium(m, width=600, height=300)
 
-    
-with col2:
-    # Summary table
-    st.subheader("Risk Level Summary")
-    st.write(df['risk_level'].value_counts().rename({0: "Low", 1: "Medium", 2: "High"}))
-    
-    # Animated arrows
+        # Animated arrows
     st.markdown("""
     <style>
     @keyframes pulse {
@@ -64,6 +58,13 @@ with col2:
 
     <div class="arrow">↓↓↓</div>
     """, unsafe_allow_html=True)
+
+    
+with col2:
+    # Summary table
+    st.subheader("Risk Level Summary")
+    st.write(df['risk_level'].value_counts().rename({0: "Low", 1: "Medium", 2: "High"}))
+    
 
 
 
