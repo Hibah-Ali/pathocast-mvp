@@ -64,6 +64,25 @@ with col2:
     # Summary table
     st.subheader("Risk Level Summary")
     st.write(df['risk_level'].value_counts().rename({0: "Low", 1: "Medium", 2: "High"}))
+
+        # Animated arrows
+    st.markdown("""
+    <style>
+    @keyframes pulse {
+      0% {opacity: 0.2;}
+      50% {opacity: 1;}
+      100% {opacity: 0.2;}
+    }
+    .arrow {
+      text-align: center;
+      font-size: 48px;
+      color: #888;
+      animation: pulse 1.5s infinite;
+    }
+    </style>
+
+    <div class="arrow">↓↓↓</div>
+    """, unsafe_allow_html=True)
     
 
 
